@@ -1,0 +1,11 @@
+baseURL = "http://www.xy0.org"
+languageCode = "en-us"
+title = "XY{Z}ero Blog"
+theme = "after-dark"
+pygmentsuseclasses = true
+
+[[menu.main]]
+name = "Home"
+weight = 100
+identifier = "home"
+url = "/"
