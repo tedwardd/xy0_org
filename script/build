@@ -5,7 +5,7 @@ err() {
     exit 1
 }
 
-if [[ ! -d 'scripts' ]]; then
+if [[ ! -d 'script' ]]; then
     echo "Must be in top leve of repo"
     exit 1
 fi

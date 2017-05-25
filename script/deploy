@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ ! -d 'scripts' ]]; then
+if [[ ! -d 'script' ]]; then
     echo "Must be in top level of repo"
     exit 1
 fi
