@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [[ ! -d 'scripts' ]]; then
+    echo "Must be in top level of repo"
+    exit 1
+fi
+
+pushd terraform-files
+terraform apply || echo "Deploy failed. See Terraform output for details"
+popd

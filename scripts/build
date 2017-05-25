@@ -1,0 +1,16 @@
+#!/bin/bash
+
+err() {
+    echo "Site build failed. Exiting..."
+    exit 1
+}
+
+if [[ ! -d 'scripts' ]]; then
+    echo "Must be in top leve of repo"
+    exit 1
+fi
+
+pushd ./site-files
+hugo || err
+popd
+exit 0

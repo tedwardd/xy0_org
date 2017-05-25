@@ -1,0 +1,40 @@
+#!/bin/bash
+
+function checkDarwin() {
+    if ! which brew | grep -q brew ; then
+        echo "Homebrew not found, please install it and try again"
+        exit 1
+    fi
+    brew list | grep -q hugo || brew install hugo
+    brew list | grep -q terraform || brew install terraform
+}
+
+# Check where we are, exit if not in top level of repo
+if [[ ! -d "scripts" ]]; then
+    echo "Must be in top level of repo"
+    exit 1
+fi
+
+case "$(uname)" in
+    Darwin*)
+        checkDarwin
+        ;;
+    #Linux*)
+        #    checkLinux
+        #    ;;
+    *)
+        echo "Unknown platform, please install hugo and try again"
+        ;;
+esac
+
+# shellcheck disable=SC2162
+read -p "Digital Ocean API key: " do_token
+# shellcheck disable=SC2162
+read -p "Full file path of SSH private key: " pvt_key
+# shellcheck disable=SC2162
+read -p "Full file path of SSH public key: " pub_key
+# shellcheck disable=SC2162
+read -p "Digital Ocean SSH key ID: " ssh_fingerprint
+code_dir="$(pwd)/site-files"
+
+echo -e "\n\nEnvironment variables have been exported to the current shell.\nTo make them permanent, add the following lines to the top of $HOME/.bashrc\n\nTF_VAR_do_token=${do_token}\nTF_VAR_pvt_key=${pvt_key}\nTF_VAR_pub_key=${pub_key}\nTF_VAR_ssh_fingerprint=${ssh_fingerprint}\nTF_VAR_code_dir=${code_dir}\nexport TF_VAR_do_token TF_VAR_pvt_key TF_VAR_pub_key TF_VAR_ssh_fingerprint TF_VAR_code_dir\n"
