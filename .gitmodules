@@ -1,0 +1,3 @@
+[submodule "site-files/themes/after-dark"]
+	path = site-files/themes/after-dark
+	url = git@github.com:comfusion/after-dark.git
