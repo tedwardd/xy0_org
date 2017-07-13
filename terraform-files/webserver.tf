@@ -6,7 +6,7 @@ resource "digitalocean_record" "www_xy0_org" {
 }
 
 resource "digitalocean_droplet" "www_xy0_org" {
-    image              = "centos-7-x64"
+    image              = "coreos-stable"
     name               = "www.xy0.org"
     region             = "sfo2"
     size               = "512mb"
@@ -15,36 +15,32 @@ resource "digitalocean_droplet" "www_xy0_org" {
                             "${var.ssh_fingerprint}"
                          ]
     connection {
-        user        = "root"
+        user        = "core"
         type        = "ssh"
         private_key = "${file(var.pvt_key)}"
         timeout     = "2m"
         agent       = false
     }
-        
-    #provisioner "file" {
-    #    source      = "files/scripts/bootstrap.sh"
-    #    destination = "/tmp/bootstrap.sh"
-    #}
 
     provisioner "remote-exec" {
         inline = [
-            "export PATH=$PATH:/usr/bin",
-            # Install epel
-            "sudo yum install -y epel-release",
-            # install nginx
-            "sudo yum update -y && sudo yum upgrade -y",
-            "sudo yum install -y nginx",
-            "sudo systemctl start nginx",
-            #"sudo chmod +x /tmp/boostrap.sh",
-            #"sudo /tmp/boostrap.sh"
-            "sudo rm -rf /usr/share/nginx/html"
+            "sudo mkdir /web",
+            "sudo chown -R core:core /web",
         ]
     }
-
+        
     provisioner "file" {
         source      = "${var.code_dir}/public"
-        destination = "/usr/share/nginx/html"
+        destination = "/web"
+    }
+
+    provisioner "remote-exec" {
+        inline = [
+            "sudo chown -R root:root /web",
+            "sudo find /web -type d -exec chmod 755 {} +",
+            "sudo find /web -type f -exec chmod 444 {} +",
+            "sudo docker run -d -v /web/public:/usr/share/nginx/html -p 80:80 nginx",
+        ]
     }
 
 }
