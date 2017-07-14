@@ -1,8 +1,20 @@
+resource "digitalocean_floating_ip" "www_xy0_org" {
+    droplet_id = "${digitalocean_droplet.www_xy0_org.id}"
+    region     = "${digitalocean_droplet.www_xy0_org.region}"
+}
+
 resource "digitalocean_record" "www_xy0_org" {
     domain = "xy0.org"
-    type   = "A"
+    type   = "CNAME"
     name   = "www"
-    value  = "${digitalocean_droplet.www_xy0_org.ipv4_address}"
+    value  = "xy0.org."
+}
+
+resource "digitalocean_record" "xy0_org" {
+    domain = "xy0.org"
+    type   = "A"
+    name   = "@"
+    value  = "${digitalocean_floating_ip.www_xy0_org.ip_address}"
 }
 
 resource "digitalocean_droplet" "www_xy0_org" {
