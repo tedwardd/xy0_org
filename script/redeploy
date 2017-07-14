@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+echo "Destroying old instance ..."
+script/destroy
+echo "Deploying new instance ..."
+script/deploy
