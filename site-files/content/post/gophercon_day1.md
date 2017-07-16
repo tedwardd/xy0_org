@@ -1,5 +1,5 @@
 +++
-categories = ["GopherCon17"]
+categories = ["Blog"]
 date = "2017-07-14T15:04:47-06:00"
 description = ""
 draft = false
