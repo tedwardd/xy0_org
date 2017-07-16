@@ -4,7 +4,7 @@ date = "2017-07-16T08:28:05-06:00"
 description = ""
 draft = false
 images = []
-tags = ["GopherCon", "Go", "Kubicorn"]]
+tags = ["GopherCon", "Go", "Kubicorn"]
 title = "Gophercon Day 3"
 toc = false
 
