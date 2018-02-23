@@ -1,3 +1,16 @@
+terraform {
+  backend "s3" {
+    bucket = "xy0-bucket"
+    key = "tfstate_files/terraform.tfstate"
+    region = "us-east-1"
+    endpoint = "https://nyc3.digitaloceanspaces.com"
+    skip_credentials_validation = true
+    skip_get_ec2_platforms = true
+    skip_requesting_account_id  = true
+    skip_metadata_api_check = true
+  }
+}
+
 resource "digitalocean_floating_ip" "www_xy0_org" {
     droplet_id = "${digitalocean_droplet.www_xy0_org.id}"
     region     = "${digitalocean_droplet.www_xy0_org.region}"
