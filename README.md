@@ -14,3 +14,14 @@ environment is ready to go, you can use `script/build` to build the site in
 `site-files/public`.  Test the site locally with `script/run`. Finally you can
 deploy the site using `script/deploy` and you can destroy the site using
 `script/destroy`.
+
+# Initialize Terraform
+
+You need to run `terraform init` from `./terraform-files` before you can deploy.
+The init command needs some args. Run it like this if you have your spaces keys
+saved in your environment.
+
+
+```
+terraform init -backend-config "access_key=$TF_VAR_spaces_key" -backend-config "secret_key=$TF_VAR_spaces_pvt_key"
+```
