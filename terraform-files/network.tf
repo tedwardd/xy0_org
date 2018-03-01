@@ -18,3 +18,10 @@ resource "digitalocean_record" "xy0_org" {
     value  = "${digitalocean_floating_ip.www_xy0_org.ip_address}"
     ttl    = "60"
 }
+
+resource "digitalocean_record" "platfrastructure_life" {
+    domain = "platfrastructure.life"
+    type   = "A"
+    name   = "@"
+    value  = "${digitalocean_floating_ip.www_xy0_org.ip_address}"
+    ttl    = "60"
