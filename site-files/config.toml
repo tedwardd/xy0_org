@@ -1,11 +1,33 @@
-baseURL = "http://www.xy0.org"
-languageCode = "en-us"
+baseurl = "http://www.xy0.org"
 title = "XY{Z}ero Blog"
-theme = "after-dark"
-pygmentsuseclasses = true
+author = "Ted Wood"
+copyright  = "&copy; 2018. All rights reserved."
+canonifyurls = true
+paginate = 10
+#languageCode = "en-us"
+theme = "blackburn"
+#pygmentsuseclasses = true
 
-[[menu.main]]
-name = "Home"
-weight = 100
-identifier = "home"
-url = "/"
+[indexes]
+  tag = "tags"
+  topic = "topics"
+
+[params]
+  subtitle = "Blog and Website"
+  brand = "XY{Z}ero"
+  custom_css = ["css/my.css"]
+  custom_js = ["js/my.js"]
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+	pre = "<i class='fa fa-home fa-fw'></i>"
+    weight = 1
+    identifier = "home"
+    url = "/"
+
+[social]
+  twitter = "theedwood"
+  linkedin = "ted-wood-71390422"
+  github = "k4k"
+  keybase = "tedward"
