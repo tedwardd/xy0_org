@@ -1,31 +1,48 @@
 +++
 title = "About"
-date = "2014-04-09"
+date = "2018-03-01"
 sidemenu = "true"
-description = "About me and this site"
+description = "Ted Wood"
 +++
 
-Hugo is a static site engine written in Go.
+I am a Systems Engineer based in Atlanta, GA, currently in the employment of
+[MailChimp](https://mailchimp.com) and co-founder of [HashIT
+Mining](https://hashitmining.com). This is my personal website. The views
+expressed here are my own and in no way reflect those of my employer. If you
+have issues with anything posted here, please contact me via email, tedward at
+xy0 dot org.
 
+## Personal Passions
 
-It makes use of a variety of open source projects including:
+My hobbies and passions change with the wind. I've tried to list some of the
+longer surviving ones here.
 
-* [Cobra](https://github.com/spf13/cobra)
-* [Viper](https://github.com/spf13/viper)
-* [J Walter Weatherman](https://github.com/spf13/jWalterWeatherman)
-* [Cast](https://github.com/spf13/cast)
+* Inline skating
+* Video games
+* Model building
+* Working on cars
+* Cryptocurrencies and blockchain technologies
+* Open source community outreach
 
-Learn more and contribute on [GitHub](https://github.com/spf13).
+## Professional Interests
 
-## Setup
+Like my personal passions, the professional interests are subject to change with
+the ever changing needs of business. Below I've attempted to compile a list of
+some of the technologies that have stuck around in my professional life for more
+than a fleeting moment.
 
-Some fun facts about [Hugo](http://gohugo.io/):
+* Kubernetes
+* Docker
+* z-nomp
+* Linux
+* Hugo (bringing you this website)
 
-* Built in [Go](http://golang.org/)
-* Loosely inspired by [Jekyll](http://jekyllrb.com/)
-* Primarily developed by [spf13](http://spf13.com/) on the train while commuting to and from Manhattan.
-* Coded in [Vim](http://vim.org) using [spf13-vim](http://vim.spf13.com/)
+## Club/Group Memberships
 
-Have questions or suggestions? Feel free to [open an issue on GitHub](https://github.com/spf13/hugo/issues/new) or [ask me on Twitter](https://twitter.com/spf13).
+I'm currently a regular member of a few local interest groups. I've listed them
+below with links to where you can get more information about these groups:
 
-Thanks for reading!
+* [Atlanta Linux Enthusiasts](https://ale.org/)
+* [DevOpsATL](https://www.meetup.com/DevOpsATL/)
+* [Kubernetes Atlanta](https://www.meetup.com/Kubernetes-Atlanta-Meetup/)
+* [Atlanta Peachtree Road Rollers](https://www.aprr.org/)

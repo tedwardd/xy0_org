@@ -25,6 +25,12 @@ theme = "blackburn"
     weight = 1
     identifier = "home"
     url = "/"
+  [[menu.main]]
+    name = "About"
+    pre = "<i class='fa fa-user fa-fw'></i>"
+    weight = 2
+    identifier = "about"
+    url = "/about/"
 
 [social]
   twitter = "theedwood"
