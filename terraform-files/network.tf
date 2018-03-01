@@ -25,3 +25,4 @@ resource "digitalocean_record" "platfrastructure_life" {
     name   = "@"
     value  = "${digitalocean_floating_ip.www_xy0_org.ip_address}"
     ttl    = "60"
+}
