@@ -11,27 +11,6 @@ terraform {
   }
 }
 
-resource "digitalocean_floating_ip" "www_xy0_org" {
-    droplet_id = "${digitalocean_droplet.www_xy0_org.id}"
-    region     = "${digitalocean_droplet.www_xy0_org.region}"
-}
-
-resource "digitalocean_record" "www_xy0_org" {
-    domain = "xy0.org"
-    type   = "CNAME"
-    name   = "www"
-    value  = "xy0.org."
-    ttl    = "60"
-}
-
-resource "digitalocean_record" "xy0_org" {
-    domain = "xy0.org"
-    type   = "A"
-    name   = "@"
-    value  = "${digitalocean_floating_ip.www_xy0_org.ip_address}"
-    ttl    = "60"
-}
-
 resource "digitalocean_droplet" "www_xy0_org" {
     image              = "coreos-stable"
     name               = "www.xy0.org"
@@ -39,7 +18,8 @@ resource "digitalocean_droplet" "www_xy0_org" {
     size               = "s-1vcpu-1gb"
     private_networking = true
     ssh_keys           = [
-                            "${var.ssh_fingerprint}"
+                            "eb:c3:a9:58:8f:1d:ab:5e:f0:61:43:af:5f:6e:a9:91",
+                            "79:94:64:68:b0:ef:ab:07:40:dc:d6:73:e1:08:70:9b"
                          ]
     connection {
         user        = "core"
