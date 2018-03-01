@@ -1,5 +1,5 @@
-baseurl = "http://www.xy0.org"
-title = "XY{Z}ero Blog"
+baseurl = "http://www.platfrastructure.life"
+title = "The Platfrastructure Life"
 author = "Ted Wood"
 copyright  = "&copy; 2018. All rights reserved."
 canonifyurls = true
@@ -14,7 +14,7 @@ theme = "blackburn"
 
 [params]
   subtitle = "Blog and Website"
-  brand = "XY{Z}ero"
+  #brand = "XY{Z}ero"
   custom_css = ["css/my.css"]
   custom_js = ["js/my.js"]
 
