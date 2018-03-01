@@ -21,6 +21,7 @@ resource "digitalocean_record" "www_xy0_org" {
     type   = "CNAME"
     name   = "www"
     value  = "xy0.org."
+    ttl    = "60"
 }
 
 resource "digitalocean_record" "xy0_org" {
@@ -28,6 +29,7 @@ resource "digitalocean_record" "xy0_org" {
     type   = "A"
     name   = "@"
     value  = "${digitalocean_floating_ip.www_xy0_org.ip_address}"
+    ttl    = "60"
 }
 
 resource "digitalocean_droplet" "www_xy0_org" {
