@@ -34,7 +34,7 @@ resource "digitalocean_droplet" "www_xy0_org" {
     image              = "coreos-stable"
     name               = "www.xy0.org"
     region             = "sfo2"
-    size               = "512mb"
+    size               = "s-1vcpu-1gb"
     private_networking = true
     ssh_keys           = [
                             "${var.ssh_fingerprint}"
