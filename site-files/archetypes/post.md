@@ -1,9 +1,9 @@
 +++
+title = "{{ replace .TranslationBaseName "-" " " | title }}"
+date = {{ .Date }}
+categories = []
 description = ""
 draft = true
-toc = false
-categories = []
 tags = []
 images = []
-# overrides the site-wide open graph image
 +++
