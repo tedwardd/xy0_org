@@ -5,16 +5,15 @@ resource "digitalocean_floating_ip" "www_xy0_org" {
 
 resource "digitalocean_record" "www_xy0_org" {
     domain = "xy0.org"
-    type   = "CNAME"
+    type   = "A"
     name   = "www"
-    value  = "xy0.org."
+    value  = "${digitalocean_floating_ip.www_xy0_org.ip_address}"
     ttl    = "60"
 }
 
 resource "digitalocean_record" "xy0_org" {
     domain = "xy0.org"
     type   = "A"
-    name   = "@"
     value  = "${digitalocean_floating_ip.www_xy0_org.ip_address}"
     ttl    = "60"
 }
@@ -22,7 +21,14 @@ resource "digitalocean_record" "xy0_org" {
 resource "digitalocean_record" "platfrastructure_life" {
     domain = "platfrastructure.life"
     type   = "A"
-    name   = "@"
+    value  = "${digitalocean_floating_ip.www_xy0_org.ip_address}"
+    ttl    = "60"
+}
+
+resource "digitalocean_record" "www_platfrastructure_life" {
+    domain = "platfrastructure.life"
+    type   = "A"
+    name   = "www"
     value  = "${digitalocean_floating_ip.www_xy0_org.ip_address}"
     ttl    = "60"
 }
